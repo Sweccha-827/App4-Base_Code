@@ -24,8 +24,169 @@ blah, blah, blah, blah
 -->
 
    <head> 
-      
-	   PUT YOUR OLD CODE IN HERE
-	   
-   </body>
+      <title>Hello World</title>  
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="apple-mobile-web-app-capable" content="yes">
+      <link rel="stylesheet" href="w3.css">
+      <link rel="stylesheet" href="w3-colors-flat.css">
+   </head> 
+
+
+<script>
+        var stroke_count = 0;
+        var heartattack_count = 0;
+	<!--Inserted variables of stroke count and heartattack count-->
+
+        function strokeAdd(){
+            stroke_count = stroke_count + 1;
+
+        }
+	<!--Inserted strokeAdd function to add to probability of having a stroke-->
+
+        function heartattackAdd(){
+            heartattack_count = heartattack_count + 1;
+        }
+	<!--Inserted heartattackAdd function to add to probability of having a heart attack-->
+	
+	function resultsoutput(){
+		var resultText = document.getElementById("results");
+		var heartattackPercent = (heartattack_count/4) * 100
+		<!--Inserted new variable of heartattackPercent to calculate the probability of the symptoms being caused by a heart attack-->
+		var strokePercent = (stroke_count/4) * 100
+		<!--Inserted new variable of strokePercent to calculate the probability of the symptoms being caused by a stroke-->
+		resultText.innerHTML = "Probability it is a stroke =" + strokePercent + "%" + "<br> Probability it is a heart attack =" + heartattackPercent + "%";
+		<!--Added results string to display the heartattack and stroke probabilities on the results page-->
+	}
+	
+  </script>
+
+
+
+<style>	
+.body {
+     margin: 0em;
+}
+
+.page {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: -100vw;
+    overflow-y: auto;
+    z-index: 0;
+    background-color: hsl(0,0%,100%);
+}
+
+  .page:target {
+    left: 0vw;
+    z-index: 1;
+}
+</style>
+
+<body>
+	
+
+<div id="header" class="w3-container w3-flat-carrot">
+	<h1>Heart Attack or Stroke?</h1>
+</div>
+	
+<div id="content" class="w3-container">
+	<p>Are you feeling like you might be having a heart attack but wonder if it is a stroke. Answer a few short questions to find out!</p>
+	
+	<a href="#one" class="w3-btn w3-grey w3-round"> Get Started </a>
+	
+	<p>The following code has been developed by students and/or researchers of the Freshman Research Initiative DIY Diagnostics Stream at The University of Texas at 		Austin.  This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only. Any user of this code 			does so at their own risk. Members of the DIY Stream, FRI, and The University of Texas system are not liable for anything related to this code.</p>
+ 	
+	<p>THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.</p>
+ </div><!-- /content -->
+	<footer class="w3-bottom w3-container w3-flat-carrot">
+	<p>DIY!</p>
+</footer>
+	</div>
+
+<div class="page" id="one">	<!--This is page one.-->
+	<div id="header" class="w3-container w3-flat-carrot">	<!--This is the orange header-->
+		<h1>Question 1</h1>	<!-- Text for header on page one-->
+	</div>
+	
+<div id="content" class="w3-container"> 	
+	<p>Are you experiencing pressure, tighteness, or aching in your chest, back, neck, or arms?</p>	<!--Inserted content for question 1-->
+	<a href="#two"  onclick="heartattackAdd();" class="w3-btn w3-black"> Yes</a>	<!--Inserted "yes" button to add to percentage for heart attack count-->
+        <a href="#two"  onclick="strokeAdd();" class="w3-btn w3-black">No</a>	<!--Inserted "no" button to add to percentage for stroke count-->
+ </div><!-- /content -->
+	<footer class="w3-bottom w3-container w3-flat-carrot">	<!--This is the orange header-->
+	<p>DIY!</p>	<!--Text for header-->
+</footer>
+	</div>
+		
+
+
+	
+    
+<div class="page" id="two">	<!--This is page two.-->
+	<div class="w3-container w3-flat-carrot">	<!--Inserted orange header-->
+		<h1>Question 2</h1>	<!--Inserted title for Question 2 in header-->
+	</div>
+	
+<div id="content" class="w3-container">
+	<p>Do you have tingling or numbness on one side of the body</p>	<!--Inserted content for question 2-->
+	<a href="#three"  onclick="strokeAdd();" class="w3-btn w3-black"> Yes</a>	<!--Inserted "yes" button to add to percentage for stroke count-->
+	<a href="#three"  onclick="heartattackAdd();" class="w3-btn w3-black"> No</a>	<!--Inserted "no" button to add to percentage for heart attack count-->
+</div><!-- /content -->
+	<footer class="w3-bottom w3-container w3-flat-carrot">	<!--Inserted footer on page two-->
+	<p>DIY!</p>	<!--Inserted text for footer-->
+</footer>
+	</div>
+
+	
+<div class="page" id="three">	<!--Inserted page 3-->
+	<div class="w3-container w3-flat-carrot">	<!--Inserted orange header-->
+		<h1>Question 3</h1>	<!--Inserted question 3 title in header-->
+	</div>
+	
+<div id="content" class="w3-container">
+	<p>Do you have nausea, indigestion, or heartburn?</p>	<!--Inserted content for question 3-->
+	<a href="#four"  onclick="heartattackAdd();" class="w3-btn w3-black"> Yes</a>	<!--Inserted "yes" button to add to percentage for heart attack count-->
+	<a href="#four"  onclick="strokeAdd();" class="w3-btn w3-black"> No</a>	<!--Inserted "no" button to add to percentage for stroke count-->
+</div><!-- /content -->
+	<footer class="w3-bottom w3-container w3-flat-carrot">	<!--Inserted orange footer on page three.-->
+	<p>DIY!</p>	<!--Inserted text for footer on page three.-->
+</footer>
+	</div>
+	
+<div class="page" id="four">	<!--Inserted page 4-->
+	<div class="w3-container w3-flat-carrot">	<!--Inserted orange footer for page four-->
+		<h1>Question 4</h1>	<!--Inserted Question 4 text in header-->
+	</div>
+	
+<div id="content" class="w3-container">
+	<p>Do you have a loss of balance, coordination, or sight?</p>	<!--Inserted content for question 4-->
+	<a href="#five"  onclick="strokeAdd();" class="w3-btn w3-black"> Yes</a>	<!--Inserted "yes" button to add to percentage for stroke count-->
+        <a href="#five"  onclick="heartattackAdd();" class="w3-btn w3-black">No</a>	<!--Inserted "no" button to add to percentage for heart attack count-->
+</div><!-- /content -->
+	<footer class="w3-bottom w3-container w3-flat-carrot">	<!--Inserted footer for page four->
+	<p>DIY!</p>	<!--Inserted text for page four-->
+</footer>
+	</div>
+	
+	
+<div class="page" id="five">	<!--Inserted page 5-->
+	<div class="w3-container w3-flat-carrot">	<!--Inserted orange header for page five-->
+		<h1>Results</h1>	<!--Inserted "Results" text in header-->
+	</div>
+	
+    	<div id="content" class="w3-container">	<!--Inserted button for results on page five-->
+		<p id="results"></p>	<!--Named the button "results"-->
+		<a onclick="resultsoutput();" class="w3-btn w3-black"> Results</a> <!--Inserted output function for results-->
+       		
+    </div>
+	<footer class="w3-bottom w3-container w3-flat-carrot">	<!--Inserted orange footer on page five-->
+	<p>DIY!</p> <!--Inserted text for footer on page five-->
+</footer>
+	</div>
+
+		
+
+	</body>
 </html>
